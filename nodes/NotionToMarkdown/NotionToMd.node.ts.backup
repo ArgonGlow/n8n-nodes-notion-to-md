@@ -1,0 +1,31 @@
+import { Client } from '@notionhq/client';
+import { IExecuteFunctions, INodeExecutionData, INodeType, INodeTypeDescription, NodeExecutionWithMetadata } from 'n8n-workflow';
+import { NotionToMarkdown } from 'notion-to-md';
+
+export class NotionToMdNode implements INodeType {
+	description: INodeTypeDescription = {
+		displayName: 'Notion Blocks to Markdown',
+		name: 'NotionToMarkdown',
+		// icon: '',
+		group: ['transform'],
+		version: 1,
+		defaults: {
+			name: 'Notion Blocks to Markdown',
+		},
+		credentials: [
+			{
+				name: 'NotionToMd',
+				required: true,
+			},
+		],
+		inputs: ['main'],
+		outputs: ['main'],
+		properties: [
+
+		]
+	}
+
+	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][] | NodeExecutionWithMetadata[][] | null> {
+
+	}
+}
